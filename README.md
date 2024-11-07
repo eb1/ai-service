@@ -27,3 +27,12 @@ Once the service starts you can go to the host and port listed in the .env file 
 
 > [!WARNING]  
 > Please note that this is a proof of concept and not for any "real" use. There is no authentication / authorization at all, and the CORS settings allow for any domain/port full access to the service. Use at your own risk! 
+
+## Seeding the database
+
+To add some sample data for testing, do the following:
+
+1. Uncomment out the SQL lines in `008.do.sql` and save the changes.
+2. Delete the file `aidb.sqlite` if it has been generated (it gets generated when you call `npm start`).
+3. Call `npm start` to start the service. Note that the file `008.do.sql` is fairly large, and might take a minute to process. When it finishes, there should be a single project (Catalan to Español), with a single book (Joan/Juan) that is partially translated. There will also be some entries in the KB. 
+4. Be sure to re-comment the SQL lines in `008.do.sql` when finished.

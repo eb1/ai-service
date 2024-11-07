@@ -25,5 +25,5 @@ npm start
 
 Once the service starts you can go to the host and port listed in the .env file and see the API under `[host]:[port]/documentation`.
 
-[!WARNING]  
-Please note that this is a proof of concept and not for any "real" use. There is no authentication / authorization at all, and the CORS settings allow for any domain/port full access to the service. Use at your own risk! 
+> [!WARNING]  
+> Please note that this is a proof of concept and not for any "real" use. There is no authentication / authorization at all, and the CORS settings allow for any domain/port full access to the service. Use at your own risk! 

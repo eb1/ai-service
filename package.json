@@ -1,0 +1,22 @@
+{
+  "name": "test-ai-service",
+  "workspaces": [
+    "services/*"
+  ],
+  "scripts": {
+    "start": "platformatic start"
+  },
+  "devDependencies": {
+    "borp": "^0.17.0",
+    "fastify": "^5.0.0"
+  },
+  "dependencies": {
+    "@fastify/cors": "^10.0.1",
+    "@platformatic/runtime": "^2.5.5",
+    "fluent-json-schema": "^5.0.0",
+    "platformatic": "^2.5.5"
+  },
+  "engines": {
+    "node": "^18.8.0 || >=20.6.0"
+  }
+}

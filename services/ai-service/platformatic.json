@@ -1,0 +1,40 @@
+{
+  "$schema": "https://schemas.platformatic.dev/@platformatic/db/2.5.5.json",
+  "db": {
+    "connectionString": "{PLT_AI_SERVICE_DATABASE_URL}",
+    "graphql": true,
+    "openapi": true,
+    "schemalock": true
+  },
+  "watch": {
+    "ignore": [
+      "*.sqlite",
+      "*.sqlite-journal"
+    ]
+  },
+  "migrations": {
+    "dir": "migrations",
+    "autoApply": "{PLT_AI_SERVICE_APPLY_MIGRATIONS}"
+  },
+  "server": {
+      "cors": {
+        "origin": ["*"],
+        "methods": ["GET", "POST", "PUT", "DELETE"]
+    }
+  },
+  "plugins": {
+    "paths": [
+      {
+        "path": "./plugins",
+        "encapsulate": false
+      },
+      {
+        "path": "./routes"
+      }
+    ],
+    "typescript": "{PLT_AI_SERVICE_TYPESCRIPT}"
+  },
+  "types": {
+    "autogenerate": true
+  }
+}

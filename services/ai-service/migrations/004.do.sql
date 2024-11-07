@@ -1,0 +1,21 @@
+CREATE TABLE IF NOT EXISTS sourcephrases (
+  id INTEGER primary key,
+  norder REAL,
+  spid TEXT NOT NULL UNIQUE,
+  chapterid TEXT REFERENCES chapters(chapterid),
+  vid TEXT,
+  markers TEXT,
+  orig TEXT,
+  prepuncts TEXT,
+  midpuncts TEXT,
+  follpuncts TEXT,
+  flags char(22),
+  texttype INTEGER,
+  gloss TEXT,
+  freetrans TEXT,
+  note TEXT,
+  srcwordbreak TEXT,
+  tgtwordbreak TEXT,
+  source TEXT,
+  target TEXT
+);

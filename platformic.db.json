@@ -1,0 +1,36 @@
+  
+  // untested role info...
+  {
+    "authorization": {
+    "adminSecret": "chapstick-fluffy-aspartame-roses",
+    "rules": [
+    {
+      "role": "platformatic-admin",
+      "entity": ['projects', 'books', 'chapters', 'sourcephrases', 'targetunits', 'users', 'bookmarks'],
+      "find": true,
+      "save": true,
+      "delete": false,
+    },
+    {
+      "role": "consultant",
+      "entity": ['projects', 'books', 'chapters', 'sourcephrases', 'targetunits', 'users', 'bookmarks'],
+      "find": true,
+      "save": true,
+      "delete": false,
+    },
+    {
+      "role": "translator",
+      "entity": ['projects', 'books', 'chapters', 'sourcephrases', 'targetunits', 'users', 'bookmarks'],
+      "find": true,
+      "save": true,
+      "delete": false,
+    },
+    {
+      "role": "anonymous",
+      "entity": ['projects', 'books', 'chapters', 'sourcephrases', 'targetunits', 'users', 'bookmarks'],
+      "find": false,
+      "save": false,
+      "delete": false,
+    }]
+    }
+  }

@@ -1,4 +1,4 @@
-# Platformatic Runtime API
+# Adapt It RESTful web service
 
 This is a proof of concept RESTful web service, using the [Platformatic Runtime](https://docs.platformatic.dev/docs/runtime/overview) application. It is intended to show AIM connectivity to a web service on localhost (see the .env file for host and port info), with no authentication / authorization. Tables are built with the `#.do.sql` files in the `ai-service/migrations` subdirectory.
 

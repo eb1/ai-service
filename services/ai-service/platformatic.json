@@ -3,7 +3,28 @@
   "db": {
     "connectionString": "{PLT_AI_SERVICE_DATABASE_URL}",
     "graphql": true,
-    "openapi": true,
+    "openapi": {
+      "info": {
+        "title": "Adapt It Mobile Service",
+        "description": "RESTful web service API",
+        "version": "0.1.0"
+      },
+      "security": [{ "bearerAuth": [] }],
+      "components": {
+        "securitySchemes": {
+          "bearerAuth": {
+            "type": "http",
+            "scheme": "bearer",
+            "bearerFormat": "JWT"
+          }
+        }
+      }
+    },
+    "autoTimestamp": true,
+    "limit": {
+      "default": 100,
+      "max": 1000
+    },
     "schemalock": true
   },
   "watch": {
@@ -15,6 +36,33 @@
   "migrations": {
     "dir": "migrations",
     "autoApply": "{PLT_AI_SERVICE_APPLY_MIGRATIONS}"
+  },
+  "authorization": {
+    "adminSecret": "{PLT_AI_SERVICE_SUPERSECRET}",
+    "jwt": {
+      "namespace": "https://platformatic.dev/",
+      "jwks": {
+        "allowedDomains": [
+          "https://dev-xxx.us.auth0.com/"
+        ]
+      }
+    },
+    "rules": [
+      {
+        "entities": ["book", "bookmark", "chapter", "sourcephrase", "project", "targetunit", "user"],
+        "role": "platformatic-admin",
+        "find": true,
+        "save": true,
+        "delete": false
+      },
+      {
+        "entities": ["book", "bookmark", "chapter", "sourcephrase", "project", "targetunit", "user"],
+        "role": "ai-user",
+        "find": true,
+        "save": true,
+        "delete": true
+      }
+    ]
   },
   "server": {
       "cors": {
